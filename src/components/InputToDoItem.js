@@ -19,6 +19,7 @@ class InputToDoItem extends Component {
 
   handleSubmitPreventDefault(event) {
     event.preventDefault();
+    this.props.handleSubmit(this.state.userinput);
     this.setState({
       userinput: ''
     })
