@@ -2,8 +2,17 @@ import React from 'react';
 
 function ListItem(props) {
   return (
-    <li className='list-group-item col-md-6 offset-md-3 justify-end reset'>
-      <span className='offset'>{props.item.item}</span>
+    <li className='list-group-item col-md-6 offset-md-3 justify-end reset' 
+        style={props.item.status ? {'backgroundColor':' #90EE90'} : null}>
+      <span className='offset resize'>{props.item.item}</span>
+      <div className='resize-container centering'>
+        <span className='offset-complete-icon' onClick={props.markAsCompleted}>
+          <i className="complete fa fa-check-square fa-2x" aria-hidden="true"></i>  
+        </span>
+        <span onClick={props.deleteItem}>
+          <i className="delete fa fa-minus-square fa-2x"></i>
+        </span>
+      </div>
     </li>
   )
 }

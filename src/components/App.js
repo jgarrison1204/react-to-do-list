@@ -10,6 +10,8 @@ class App extends Component {
       toDoList: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDeleteItem = this.handleDeleteItem.bind(this);
+    this.handleCompleted = this.handleCompleted.bind(this);
   }
   handleSubmit(item) {
   	// Pass in item from user input and set completed status to false
@@ -22,6 +24,25 @@ class App extends Component {
         toDoList: addItemToList
     })
   }
+  
+  handleCompleted(item) {
+    console.log(item)
+    const toggledItemList = this.state.toDoList.map( currentItem => {
+      return currentItem.item === item.item ? {item: currentItem.item, status: !currentItem.status} : currentItem; 
+    }); 
+    this.setState({
+      toDoList: toggledItemList
+    })
+  }
+  
+  handleDeleteItem(item) {
+    const deleteItemList = this.state.toDoList.filter( currentItem => {
+      return currentItem.item === item.item ? false : currentItem.item; 
+    });
+    this.setState({
+      toDoList: deleteItemList
+    });
+  }
 
   render() {
   	// Create new array with user input as array to render to DOM.
@@ -30,6 +51,8 @@ class App extends Component {
     		<ListItem
           		key={toDoItem + i}
           		item={toDoItem}
+	          	deleteItem={this.handleDeleteItem.bind(null, toDoItem)}
+    	      	markAsCompleted={this.handleCompleted.bind(null, toDoItem)}
            	/>
         )
     })
