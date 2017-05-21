@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InputToDoItem from './InputToDoItem';
+import ListItem from './ListItem';
 import '../styles.css';
 
 class App extends Component {
@@ -25,7 +26,12 @@ class App extends Component {
   render() {
   	// Create new array with user input as array to render to DOM.
     const arrToDisplay = this.state.toDoList.map((toDoItem, i) => {
-    	return toDoItem.item;
+    	return (
+    		<ListItem
+          		key={toDoItem + i}
+          		item={toDoItem}
+           	/>
+        )
     })
     return (
       <div>
