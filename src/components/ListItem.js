@@ -2,7 +2,7 @@ import React from 'react';
 
 function ListItem(props) {
   return (
-    <li className='list-group-item col-md-6 offset-md-3 justify-end reset' 
+    <li className='list-group-item col-12 col-sm-6 offset-sm-3 justify-end reset' 
         style={props.item.status ? {'backgroundColor':' #90EE90'} : null}>
       <span className='offset resize'>{props.item.item}</span>
       <div className='resize-container centering'>

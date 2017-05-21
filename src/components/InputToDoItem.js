@@ -28,7 +28,7 @@ class InputToDoItem extends Component {
   render() {
     return(
       <div className='row centering'>
-      <form className='input-space col-md-6 offset-md-3 input-group' onSubmit={this.handleSubmitPreventDefault}>
+      <form className='input-space col-12 col-sm-6 offset-sm-3 input-group' onSubmit={this.handleSubmitPreventDefault}>
         <label htmlFor="add-to-do"></label>
         <input
           className='form-control'
