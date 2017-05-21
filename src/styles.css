@@ -5,6 +5,18 @@ body{
   	font-family: sans-serif;
 }
 
+.header-settings {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100px;
+	width: 100%;
+	background-color: black;
+	color: #2196f3;
+	margin-top: 0px;
+	text-align: center;
+}
+
 .centering {
 	text-align: center;
 }
