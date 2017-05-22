@@ -59,7 +59,8 @@ class App extends Component {
     return (
       <div>
         <InputToDoItem 
-          handleSubmit={this.handleSubmit}/>
+          handleSubmit={this.handleSubmit}
+          itemEntered={this.state.toDoList}/>
         <ul className='list-group'>
           {arrToDisplay}
         </ul>

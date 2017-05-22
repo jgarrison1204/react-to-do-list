@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 class InputToDoItem extends Component {
   constructor(props) {
     super(props);
+    console.log(props)
     this.state = {
       userinput: ''
     }
@@ -36,9 +37,14 @@ class InputToDoItem extends Component {
           value={this.state.userinput} 
           onChange={this.handleChange}
           type="text"
+          placeholder={this.props.itemEntered.length ? null : 'Enter item here' }
         />
         <span className="input-group-btn">
-            <button className='btn btn-primary' type='submit'>Submit</button>
+            <button 
+                className='btn btn-primary' 
+                type='submit'
+                disabled={!this.state.userinput}>
+            Submit</button>
         </span>
       </form>
       </div>
