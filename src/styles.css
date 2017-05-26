@@ -43,9 +43,17 @@ body{
 	color: lightgreen;
 }
 
+.complete:hover {
+	color: #c0f3c0;
+}
+
 .delete {
 	color: red;
 	background-color: white;
+}
+
+.delete:hover {
+	color: #e38e8e;
 }
 
 .resize {
@@ -60,6 +68,10 @@ body{
 	height: 100%;
 	border-top-right-radius: .25rem;
     border-top-left-radius: .25rem;
+}
+
+.resize-container:hover {
+	cursor: pointer;
 }
 
 @media only screen and (max-width: 500px) {
