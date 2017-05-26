@@ -3,27 +3,13 @@ import React, {Component} from 'react';
 class InputToDoItem extends Component {
 	constructor(props) {
 		super(props);
-		console.log(props)
-		this.state = {
-	 		userinput: ''
-		}
 		// Explicitly bind this to the handlers functions.
-		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmitPreventDefault = this.handleSubmitPreventDefault.bind(this); 
 	}
 
-	handleChange(event) {
-		this.setState({
-			userinput: event.target.value
-		})
-	};
-
 	handleSubmitPreventDefault(event) {
 		event.preventDefault();
-		this.props.handleSubmit(this.state.userinput);
-		this.setState({
-	 		userinput: ''
-		})
+		this.props.handleSubmit(this.props.userInput);
 	}
 
 	render() {
@@ -34,8 +20,8 @@ class InputToDoItem extends Component {
 		   			<input
 						className='form-control'
 						id='add-to-do'
-						value={this.state.userinput} 
-						onChange={this.handleChange}
+						value={this.props.userInput} 
+						onChange={this.props.handleChange}
 						type="text"
 						placeholder={this.props.itemEntered.length ? null : 'Enter item here' }
 		   			/>
@@ -43,7 +29,7 @@ class InputToDoItem extends Component {
 			  			<button 
 				 			className='btn btn-primary' 
 				 			type='submit'
-				 			disabled={!this.state.userinput}>
+				 			disabled={!this.props.userInput}>
 			  			Submit</button>
 		   			</span>
 		 		</form>

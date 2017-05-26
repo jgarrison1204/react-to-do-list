@@ -1,15 +1,21 @@
 import React from 'react';
 
 function ListItem(props) {
+	let completed = props.item.status;
 	return (
 		<li className='list-group-item col-12 col-sm-6 offset-sm-3 justify-end reset' 
-				style={props.item.status ? {'backgroundColor':' #90EE90'} : null}>
-			<span className='offset resize'>{props.item.item}</span>
-			<div className='resize-container centering'>
-				<span className='offset-complete-icon' onClick={props.markAsCompleted}>
+			style={completed ? {'backgroundColor':' #eaeaea'} : null }>
+			<span 
+				className='offset resize' 
+				style={completed ? {'textDecoration': 'line-through'} : null}>
+				{props.item.item}
+			</span>
+			<div 
+				className='resize-container d-flex justify-content-center'>
+				<span className='offset-complete-icon d-flex align-items-center' onClick={props.markAsCompleted}>
 					<i className="complete fa fa-check-square fa-2x" aria-hidden="true"></i>  
 				</span>
-				<span onClick={props.deleteItem}>
+				<span className='d-flex align-items-center' onClick={props.deleteItem}>
 					<i className="delete fa fa-minus-square fa-2x"></i>
 				</span>
 			</div>

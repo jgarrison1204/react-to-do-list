@@ -7,11 +7,19 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            toDoList: []
+            toDoList: [],
+            userinput: ''
         }
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
         this.handleCompleted = this.handleCompleted.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({
+            userinput: event.target.value
+        })
     }
 
     handleSubmit(item) {
@@ -22,7 +30,8 @@ class App extends Component {
         // Use concat here instead of push because need we don't want to mutate the array. Concat returns new array.
         const addItemToList = currentToDoList.concat(itemToAdd);
         this.setState({
-            toDoList: addItemToList
+            toDoList: addItemToList,
+            userinput: ''
         })
     }
   
@@ -58,9 +67,11 @@ class App extends Component {
         })
         return (
             <div>
-                <InputToDoItem 
+                <InputToDoItem
+                    handleChange={this.handleChange} 
                     handleSubmit={this.handleSubmit}
-                    itemEntered={this.state.toDoList}/>
+                    itemEntered={this.state.toDoList}
+                    userInput={this.state.userinput}/>
                 <ul className='list-group'>
                     {arrToDisplay}
                 </ul>
