@@ -10,13 +10,15 @@ class App extends Component {
 		// User input will be added to the toDoList array on submit.
 		this.state = {
 			toDoList: [],
-			userinput: ''
+			userinput: '',
+			displaycompleted: true
 		};
 		// binding the Component context to all of the handlers so setState is in the proper context to update.
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleDeleteItem = this.handleDeleteItem.bind(this);
 		this.handleCompleted = this.handleCompleted.bind(this);
+		this.handleShowToDoLeftToComplete = this.handleShowToDoLeftToComplete.bind(this);
 	}
 
 	// on change in the input updates state.
@@ -59,6 +61,14 @@ class App extends Component {
 		});
 	}
 
+	// inverse the value of boolean this.state.displaycomplete.
+	handleShowToDoLeftToComplete() {
+		let toogleDisplayCompleted = !this.state.displaycompleted;
+		this.setState({
+			displaycompleted: toogleDisplayCompleted
+		});
+	}
+
 	render() {
 		// Create new array with user input as items to render to DOM. Bind event handlers to each to list entered by the user.
 		const arrToDisplay = this.state.toDoList.map((toDoItem, i) => {
@@ -68,6 +78,7 @@ class App extends Component {
 					item={toDoItem}
 					deleteItem={this.handleDeleteItem.bind(null, toDoItem)}
 					markAsCompleted={this.handleCompleted.bind(null, toDoItem)}
+					toggleCompleted={this.state.displaycompleted}
 				/>
 			);
 		});
@@ -78,7 +89,7 @@ class App extends Component {
 					handleSubmit={this.handleSubmit}
 					itemEntered={this.state.toDoList}
 					userInput={this.state.userinput}/>
-				{this.state.toDoList.length > 0 ? <FilterCompletedTasks /> : null}
+				{this.state.toDoList.length > 0 ? <FilterCompletedTasks handleFilter={this.handleShowToDoLeftToComplete} /> : null}
 				<ul className='list-group'>
 					{arrToDisplay}
 				</ul>
