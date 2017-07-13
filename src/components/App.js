@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputToDoItem from './InputToDoItem';
 import ListItem from './ListItem';
+import FilterCompletedTasks from './FilterCompletedTasks';
 import '../styles.css';
 
 class App extends Component {
@@ -77,6 +78,7 @@ class App extends Component {
 					handleSubmit={this.handleSubmit}
 					itemEntered={this.state.toDoList}
 					userInput={this.state.userinput}/>
+				{this.state.toDoList.length > 0 ? <FilterCompletedTasks /> : null}
 				<ul className='list-group'>
 					{arrToDisplay}
 				</ul>
