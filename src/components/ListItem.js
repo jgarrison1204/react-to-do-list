@@ -1,5 +1,5 @@
 import React from 'react';
-
+// Stateless functional component for rendering. The styles in this component are changed by onClick events which passes in props from the app which toggles the status property on the itemToAdd object in the handleSubmit function in the App component. 
 function ListItem(props) {
 	let completed = props.item.status;
 	return (
@@ -20,7 +20,7 @@ function ListItem(props) {
 				</span>
 			</div>
 		</li>
-	)
+	);
 }
 
 export default ListItem;
