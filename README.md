@@ -10,8 +10,8 @@ You will need to install `Node.js` and `npm`. Please follow this [link](https://
 
 * React.js
 * Bootstrap 4
+* Animate.CSS
+* Font Awesome
 * Node.js
 
-## Next Steps
 
-Next functionality will be a check box with will filter all the items that are not complete. 
