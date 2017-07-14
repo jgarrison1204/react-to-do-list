@@ -72,7 +72,7 @@ class App extends Component {
 
 	render() {
 		// Create new array with user input as items to render to DOM. Bind event handlers to each to list entered by the user.
-		const arrToDisplay = this.state.toDoList.map((toDoItem, i) => {
+		const todoItems = this.state.toDoList.map((toDoItem, i) => {
 			return (
 			    <ListItem
 					key={toDoItem + i}
@@ -83,7 +83,8 @@ class App extends Component {
 				/>
 			);
 		});
-		let displayAllDone = this.state.toDoList.length === 0 ? false : this.state.toDoList.every(item =>item.status === true);
+		// returns a boolean value, true if all the the items on the todo list are marked as complete.
+		let displayAllDone = this.state.toDoList.length === 0 ? false : this.state.toDoList.every(item => item.status === true);
 		return (
 			<div>
 				<InputToDoItem
@@ -91,10 +92,13 @@ class App extends Component {
 					handleSubmit={this.handleSubmit}
 					itemEntered={this.state.toDoList}
 					userInput={this.state.userinput}/>
+				{/* if user has entered an item on the to do list then the checkbox will render passing in an handler to allow toggling*/}
 				{this.state.toDoList.length > 0 ? <FilterCompletedTasks handleFilter={this.handleShowToDoLeftToComplete} /> : null}
+				{/*if all items in to do list are marked as complete and show completed items it checked then DisplayAllDoneMessage is render as a fun ending*/}
 				{displayAllDone && !this.state.displaycompleted ? <DisplayAllDoneMessage /> : null}
+				{/*returns an array of formatted to do items. This is the major purpose of this application*/}
 				<ul className='list-group'>
-					{arrToDisplay}
+					{todoItems}
 				</ul>
 			</div>
 		);

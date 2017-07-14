@@ -9,7 +9,7 @@ function DisplayAllDoneMessage() {
 			}
 			className='animated fadeIn'>
 			<h1>All done, time for an umberlla drink.</h1>
-			<img className='img-fluid' src={require('../images/umbrella-drink.png')} alt='umberla drink'/>
+			<img className='img-fluid' src={require('../images/pina-colada.jpg')} alt='umberla drink'/>
 		</div>
 	)
 }
