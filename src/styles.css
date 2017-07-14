@@ -21,6 +21,13 @@ body {
 	text-align: center;
 }
 
+.centering-check-box {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	text-align: center;
+}
+
 .offset {
 	margin: 0 auto;
 }
