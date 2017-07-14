@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import InputToDoItem from './InputToDoItem';
 import ListItem from './ListItem';
 import FilterCompletedTasks from './FilterCompletedTasks';
+import DisplayAllDoneMessage from './DisplayAllDoneMessage';
 import '../styles.css';
 
 class App extends Component {
@@ -82,6 +83,7 @@ class App extends Component {
 				/>
 			);
 		});
+		let displayAllDone = this.state.toDoList.length === 0 ? false : this.state.toDoList.every(item =>item.status === true);
 		return (
 			<div>
 				<InputToDoItem
@@ -90,6 +92,7 @@ class App extends Component {
 					itemEntered={this.state.toDoList}
 					userInput={this.state.userinput}/>
 				{this.state.toDoList.length > 0 ? <FilterCompletedTasks handleFilter={this.handleShowToDoLeftToComplete} /> : null}
+				{displayAllDone && !this.state.displaycompleted ? <DisplayAllDoneMessage /> : null}
 				<ul className='list-group'>
 					{arrToDisplay}
 				</ul>
