@@ -3,7 +3,7 @@ import React from 'react';
 function FilterCompletedTasks(props) {
 	return (
 		<div 
-			className='centering'
+			className='centering animated fadeInDown'
 			style={{'margin': '.5%'}}>
 			<label 
 				htmlFor='to-do-tasks'
