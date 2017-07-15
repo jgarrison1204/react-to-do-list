@@ -1,8 +1,8 @@
 body {
 	box-sizing: border-box;
-  	margin: 0;
-  	padding: 0;
-  	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
 
 .header-settings {
@@ -23,8 +23,8 @@ body {
 
 .centering-check-box {
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 }
 
@@ -73,7 +73,7 @@ body {
 	background-color: white;
 	height: 100%;
 	border-top-right-radius: .25rem;
-    border-top-left-radius: .25rem;
+	border-top-left-radius: .25rem;
 }
 
 .resize-container:hover {
@@ -88,3 +88,24 @@ body {
 		font-size: 1.5em;
 	}
 }  
+
+ /* IE Edge 12+ CSS styles go here */ 
+@supports (-ms-accelerator:true) {
+  .header-settings {
+	margin-bottom: 2%;
+  }
+}
+
+/* IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	label {
+		margin-bottom: 0px;
+	}
+	.header-settings {
+		min-height: 0px;
+		height: 100px;
+	}
+	.reset {
+		padding: 17px;
+	}
+}
