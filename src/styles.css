@@ -79,7 +79,7 @@ body {
 .resize-container:hover {
 	cursor: pointer;
 }
-
+	
 @media only screen and (max-width: 500px) {
 	#root {
 		padding: 3%;
@@ -89,11 +89,11 @@ body {
 	}
 }  
 
- /* IE Edge 12+ CSS styles go here */ 
+/* IE Edge 12+ CSS styles go here */ 
 @supports (-ms-accelerator:true) {
-  .header-settings {
-	margin-bottom: 2%;
-  }
+	.header-settings {
+		margin-bottom: 2%;
+	}
 }
 
 /* IE10+ CSS styles go here */
@@ -101,11 +101,17 @@ body {
 	label {
 		margin-bottom: 0px;
 	}
+
 	.header-settings {
 		min-height: 0px;
 		height: 100px;
 	}
+
 	.reset {
 		padding: 17px;
+	}
+
+	.delete {
+		background-color: transparent;
 	}
 }
