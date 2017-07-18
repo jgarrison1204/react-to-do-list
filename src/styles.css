@@ -34,7 +34,7 @@ body {
 }
 
 .reset {
-	padding: 0px;
+	/*padding: 0px;*/
 	padding-left: 15px;
 }
 
@@ -87,7 +87,7 @@ body {
 }  
 
 /* IE Edge 12+ CSS styles go here */ 
-@supports (-ms-accelerator:true) {
+/*@supports (-ms-accelerator:true) {
 	.header-settings {
 		margin-bottom: 2%;
 	}
@@ -97,7 +97,7 @@ body {
 	.reset {
 		padding: 17px;
 	}
-}
+}*/
 
 /* IE10+ CSS styles go here */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
