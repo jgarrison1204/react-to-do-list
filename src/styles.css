@@ -33,11 +33,6 @@ body {
 	margin: 0 auto;
 }
 
-.reset {
-	/*padding: 0px;*/
-	padding-left: 15px;
-}
-
 .offset-complete-icon {
 	margin-right: 1%;
 }
@@ -86,18 +81,9 @@ body {
 	}
 }  
 
-/* IE Edge 12+ CSS styles go here */ 
-/*@supports (-ms-accelerator:true) {
-	.header-settings {
-		margin-bottom: 2%;
-	}
-}
-
+/*CSS hack for Safari in case we need it later*/
 @supports (-webkit-appearance:none) {
-	.reset {
-		padding: 17px;
-	}
-}*/
+}
 
 /* IE10+ CSS styles go here */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -109,10 +95,6 @@ body {
 		min-height: 0px;
 		height: 100px;
 	}
-/*
-	.reset {
-		padding: 17px;
-	}*/
 
 	.delete {
 		background-color: transparent;
