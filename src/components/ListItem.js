@@ -16,7 +16,7 @@ function ListItem(props) {
 		toggleStyles = null;
 	}
 	return (
-		<li className='list-group-item col-12 col-sm-6 offset-sm-3 justify-end reset'
+		<li className='list-group-item col-12 col-sm-6 offset-sm-3 justify-end'
 			style={toggleStyles}>
 			<span 
 				className='offset resize' 

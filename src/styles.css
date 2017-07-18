@@ -76,6 +76,7 @@ body {
 	#root {
 		padding: 3%;
 	}
+	
 	header > h1 {
 		font-size: 1.5em;
 	}
@@ -94,6 +95,10 @@ body {
 	.header-settings {
 		min-height: 0px;
 		height: 100px;
+	}
+
+	.list-group-item {
+		padding: 1.25rem 1.25rem;
 	}
 
 	.delete {
