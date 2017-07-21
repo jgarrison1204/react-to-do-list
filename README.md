@@ -1,6 +1,6 @@
 # React To Do List
 
-A to do list application that allows a user to enter something he or she has to complete.  The user can mark an item as complete or can remove an item from the list.
+A to do list application that allows a user to enter something he or she has to complete.  The user can mark an item as complete or can remove an item from the list. Click [here](https://jgarrison1204.github.io/react-to-do-list/) to see the live app.
 
 ## Installing
 
@@ -18,4 +18,6 @@ The end user can enter to do items into the input field.  The end user can submi
 * Font Awesome
 * Node.js
 
+## Bugs
 
+Need to test on Safari and more moblie devices.  `li` seem to not render proper on iPhone.
