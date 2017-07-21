@@ -71,6 +71,10 @@ body {
 .resize-container:hover {
 	cursor: pointer;
 }
+
+.safari-list-item-height {
+	min-height: 32px;
+}
 	
 @media only screen and (max-width: 500px) {
 	#root {
