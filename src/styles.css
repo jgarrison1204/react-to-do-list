@@ -73,7 +73,6 @@ body {
 }
 
 .safari-list-item-height {
-	min-height: 32px;
 }
 	
 @media only screen and (max-width: 500px) {
@@ -89,7 +88,8 @@ body {
 /*CSS hack for Safari in case we need it later*/
 @supports (-webkit-appearance:none) {
 	.safari-list-item-height {
-		min-height: 32px;
+		overflow: hidden;
+		padding: 0px;
 	}
 }
 
