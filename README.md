@@ -20,4 +20,4 @@ The end user can enter to do items into the input field.  The end user can submi
 
 ## Bugs
 
-Need to test on Safari and more moblie devices.  `li` seem to not render proper on iPhone.
+Using Bootstrap 4 alpha release so there might be bugs in the list-group-item that causing children elements to not render as expected.  The height of list-group-item element does not adjust to padding or height of child elements. Since this is a practice React App will keep BS4.
