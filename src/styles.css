@@ -89,7 +89,6 @@ body {
 @supports (-webkit-appearance:none) {
 	.safari-list-item-height {
 		overflow: hidden;
-		padding: 0px;
 	}
 }
 
